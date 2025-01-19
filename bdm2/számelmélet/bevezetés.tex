@@ -28,3 +28,36 @@
         \tag{Ellentmondás, mert $r, r' < |b|$}
     \end{gather*}
 \end{proof}
+\subsubsection{Legnagyobb közös osztó}
+\begin{definition}
+    Legyenek $a, b \in \mathbb{Z}$.
+    A $d$ nemnegatív egész az $a$ és $b$ legnagyobb közös osztója, ha
+    \begin{itemize}
+        \item $d \mid a$ és $d \mid b$
+        \item minden $k \in \mathbb{Z}$ esetén, ha $k \mid a$ és $k \mid b$,
+        akkor $k \mid d$
+    \end{itemize}
+    $a = b = 0$ esetén $d = 0$.
+\end{definition}
+\begin{remark*}
+    Jelölése: $d = (a, b) = \text{lnko}(a, b) = \gcd(a, b)$
+\end{remark*}
+\begin{theorem}
+    Minden $a, b \in \mathbb{Z}$ esetén
+    létezik az $(a, b)$ legnagyobb közös osztó.
+\end{theorem}
+\begin{proof}
+    \begin{equation*}
+        (a, b) = (0, 0) \implies (a, b) = 0
+    \end{equation*}
+    \begin{align*}
+        (a, b) \neq (0, 0) \implies \\
+        a = b \cdot q_1 + r_1 & \quad 0 < r_1 < |b| \\
+        b = r_1 \cdot q_2 + r_2 & \quad 0 < r_2 < r_1 \\
+        r_1 = r_2 \cdot q_3 + r_3 & \quad 0 < r_3 < r_2 \\
+        \dots \\
+        r_{n - 2} = r_{n - 1} \cdot q_n + r_n & \quad 0 < r_n < r_{n - 1} \\
+        r_{n - 1} = r_n \cdot q_{n + 1} \\
+        (a, b) = r_n
+    \end{align*}
+\end{proof}
