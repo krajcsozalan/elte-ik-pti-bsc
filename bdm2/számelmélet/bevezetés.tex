@@ -1,3 +1,30 @@
 \setcounter{definition}{0}
 \setcounter{theorem}{0}
 \subsection{Bevezetés}
+\subsubsection{Maradékos osztás}
+\begin{theorem}
+    Tetszőleges $a, b \neq 0$ egész számokhoz
+    egyértelműen léteznek $q, r$ egészek, hogy
+    \begin{equation*}
+        a = b \cdot q + r \quad 0 \leq r < |b|
+    \end{equation*}
+\end{theorem}
+\begin{remark*}
+    Jelölése: $r = a \bmod b$
+\end{remark*}
+\begin{proof}
+    \begin{equation*}
+        a < b \implies a = b \cdot 0 + a \implies q = 0 \land r = a
+    \end{equation*}
+    \begin{multline*}
+        a \geq b \implies \exists q', r': a - b = b \cdot q' + r' \implies \\
+        a = b \cdot (q' + 1) + r' \implies q = q' + 1 \land r = r'
+    \end{multline*}
+    \begin{gather*}
+        a = b \cdot q + r = b \cdot q' + r' \quad (r' \geq r) \implies
+        b \cdot (q - q') = r' - r \\
+        q \neq q' \implies |q - q'| > 1 \implies |b \cdot (q - q')| > b \implies
+        |r' - r| = r' - r > b
+        \tag{Ellentmondás, mert $r, r' < |b|$}
+    \end{gather*}
+\end{proof}
