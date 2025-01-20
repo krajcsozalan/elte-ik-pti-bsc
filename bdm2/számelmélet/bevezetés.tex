@@ -61,3 +61,41 @@
         (a, b) = r_n
     \end{align*}
 \end{proof}
+\subsubsection{Euklideszi algoritmus}
+\begin{definition}
+	Legyen $a, b \in \mathbb{Z}$ és $r_{-1} = a, r_0 = b$.
+	Ekkor az euklideszi algoritmus $i$-edik ($i \geq 1$) sora
+	\begin{equation*}
+		r_{i - 2} = r_{i - 1} \cdot q_i + r_i \quad 0 < r_i < r_{i - 1}
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	Az euklideszi algoritmus véges sok lépésben véget ér és
+	az utolsó nem-nulla maradék a legnagyobb közös osztó.
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		|b| > r_1 > r_2 > \dots > r_{n - 1} > r_n \\
+		r_n \mid r_{n - 1} \implies
+		r_n \mid r_{n - 1} \cdot q_n + r_n = r_{n - 2} \implies
+		\dots \implies r_n \mid a \implies r_n \mid b \\
+		c \mid a, b \implies
+		c \mid b \cdot q_1 + r_1 - q_1 \cdot b = r_1 \implies
+		c \mid r_2 \implies \dots \implies c \mid r_n
+	\end{gather*}
+\end{proof}
+\begin{theorem}
+	Legyenek $a, b$ egész számok és tegyük fel, hogy $1 < |b| < a$.
+	Ekkor az algoritmus legfeljebb $2 \cdot (1 + \log |b|)$ lépésben véget ér.
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		r_{i - 2} = r_{i - 1} \cdot q_i + r_i \quad (0 < r_i < r_{i - 1}) \\
+		r_{i - 2} > r_i \cdot q_i + r_i > 2 \cdot r_i \\
+		n \text{ páratlan} \implies |b| > r_1 > 2 \cdot r_3 > 4 \cdot r_5 >
+		\dots > 2^\frac{n - 1}{2} \cdot r_n > 2^\frac{n - 1}{2} \\
+		n \text{ páros} \implies |b| > r_1 > 2 \cdot r_3 > 4 \cdot r_5 >
+		\dots > 2^\frac{n - 2}{2} \cdot r_{n - 1} > 2^\frac{n - 2}{2} \\
+		|b| > 2^\frac{n - 2}{2} \implies n < 2 \cdot (1 + \log |b|)
+	\end{gather*}
+\end{proof}
