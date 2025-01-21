@@ -1,3 +1,42 @@
 \setcounter{definition}{0}
 \setcounter{theorem}{0}
 \subsection{Számelmélet}
+\subsubsection{Maradékos osztás}
+\begin{theorem}
+	Legyen $\mathbb{K} \in \{ \mathbb{C, R, Q, Z}_p \}$ és
+	$f, g \in \mathbb{K}[x], g \neq 0$.
+	Ekkor egyértelműen léteznek olyan $q, r \in \mathbb{K}[x]$ polinomok, hogy
+	\begin{equation*}
+		f = g \cdot q + r \quad \deg r < \deg g
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		f = c_n \cdot x^n + \dots + c_0 \quad
+		g = d_m \cdot x^m + \dots + d_0 \quad c_n, d_m \neq 0 \\
+		\deg f < \deg g \implies f = g \cdot 0 + f \implies q = 0 \land r = f \\
+	\end{gather*}
+	\begin{multline*}
+		\deg f \geq \deg g \implies n \geq m \implies \\
+		f' = f - \frac{c_n}{d_m} \cdot x^{n - m} \cdot g = g \cdot q' + r' \quad
+		\deg r' < \deg g
+	\end{multline*}
+	\begin{equation*}
+		f = g \cdot
+		\left( q' + \frac{c_n}{d_m} \cdot x^{n - m} \right) + r' \implies
+		q = q' + \frac{c_n}{d_m} \cdot x^{n - m} \land r = r'
+	\end{equation*}
+	\begin{gather*}
+		f = g \cdot q + r = g \cdot q' + r' \quad \deg r, \deg r' < \deg g \\
+		g \cdot (q - q') = r' - r
+	\end{gather*}
+	\begin{multline*}
+		q \neq q' \implies \deg(q - q') > 0 \implies
+		\deg g \cdot (q - q') \geq \deg g \implies \\
+		\deg r' - r \geq \deg g
+		\tag{Ellentmondás, mert $\deg r, \deg r' < \deg g$}
+	\end{multline*}
+\end{proof}
+\begin{remark*}
+	A tétel $\mathbb{Z}[x]$-ben és $\mathbb{Z}_8[x]$-ben igaz.
+\end{remark*}
