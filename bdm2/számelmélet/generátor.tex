@@ -10,3 +10,34 @@
 	\end{equation*}
 	Ekkor $g$ egy generátor.
 \end{definition}
+\subsubsection{Diszkrét logaritmus}
+\begin{definition}
+	Legyen $p$ prímszám, $g$ generátor modulo $p$.
+	Legyen $a \in \mathbb{Z}_p^*$ (azaz $p \nmid a$).
+	Ekkor az $a$-nak a $g$ alapú diszkrét logaritmusa
+	\begin{equation*}
+		\log_g a = n: a \equiv g^n \bmod p \quad 0 \leq n < p - 1
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	Legyen $p$ prímszám, $g$ generátor
+	modulo $p, 1 \leq a, b, < p, n \in \mathbb{Z}$. Ekkor
+	\begin{gather*}
+		\log_g(a \cdot b) \equiv \log_g a + \log_g b \mod p - 1 \\
+		\log_g(a^n) \equiv n \cdot \log_g a \mod p - 1
+	\end{gather*}
+\end{theorem}
+\begin{proof}
+	% TODO: Recheck
+	\begin{gather*}
+		\log_g a = n: a \equiv g^n \mod p \\
+		\log_g b = m: b \equiv g^m \mod p \\
+		\log_g(a \cdot b) = o: a \cdot b \equiv g^o \mod p \\
+		a \cdot b \equiv g^n \cdot g^m \equiv g^{n + m} \mod p \\
+		\log_g a + \log_g b = n + m = o = \log_g(a \cdot b)
+	\end{gather*}
+	\begin{gather*}
+		\log_g(a^n) = \log_g(a \cdot \dots \cdot a) =
+		\log_g a + \dots + \log_g a = n \cdot log_g a
+	\end{gather*}
+\end{proof}
