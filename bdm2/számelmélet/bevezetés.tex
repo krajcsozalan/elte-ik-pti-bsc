@@ -99,3 +99,39 @@
 		|b| > 2^\frac{n - 2}{2} \implies n < 2 \cdot (1 + \log |b|)
 	\end{gather*}
 \end{proof}
+\subsubsection{Lineáris diofantikus egyenletek}
+\begin{theorem}
+	Minden $a, b, c$ egész számok esetén
+	pontosan akkor léteznek $x, y$ egészek, hogy $x \cdot a + y \cdot b = c$,
+	ha $(a, b) \mid c$.
+\end{theorem}
+\begin{proof}
+	\begin{equation*}
+		(a, b) \mid a \land (a, b) \mid b \implies
+		(a, b) \mid x \cdot a + y \cdot b = c
+	\end{equation*}
+	\begin{gather*}
+		(a, b) \mid c \implies (a, b) \cdot k = c \\
+		x' \cdot a + y' \cdot b = (a, b) \implies
+		(x' \cdot k) \cdot a + (y' \cdot k) \cdot b = k \cdot (a, b) = c
+	\end{gather*}
+	\begin{gather*}
+		r_{i - 2} = r_{i - 1} \cdot q_i + r_i \\
+		x_{-1} = 1, x_0 = 0 \quad i \geq 1 \implies
+		x_i = x_{i - 2} - q_i \cdot x_{i - 1} \\
+		y_{-1} = 0, y_1 = 1 \quad i \geq 1 \implies
+		y_i = y_{i - 2} - q_i \cdot y_{i - 1} \\
+	\end{gather*}
+	\begin{gather*}
+		i = -1 \implies r_{-1} = a = 1 \cdot a + 0 \cdot b \\
+		i = 0 \implies r_0 = b = 0 \cdot a + 1 \cdot b \\
+		i \geq 1 \implies r_{i - 2} = r_{i - 1} \cdot q_i + r_i \implies
+		r_i = r_{i - 2} - r_{i - 1} \cdot q_i \\
+		r_i = \left( x_{i - 2} \cdot a + y_{i - 2} \cdot b \right) -
+		\left( x_{i - 1} \cdot a + y_{i - 1} \cdot b \right) \cdot q_i \\
+		r_i = \left( x_{i - 2} - q_i \cdot x_{i - 1} \right) \cdot a +
+		\left( y_{i - 2} - q_i \cdot y_{i - 1} \right) \cdot b \\
+		r_i = x_i \cdot a + y_i \cdot b \\
+		r_n = x_n \cdot a + y_n \cdot b
+	\end{gather*}
+\end{proof}
