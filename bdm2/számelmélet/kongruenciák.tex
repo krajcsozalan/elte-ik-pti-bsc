@@ -77,3 +77,40 @@
 		\frac{n}{d} \mid (b - c)
 	\end{equation*}
 \end{proof}
+\subsubsection{Lineáris kongruenciák}
+\begin{theorem}
+	Legyenek $a, b, n \in \mathbb{Z}, n > 1$.
+	Ekkor az $a \cdot x \equiv b \mod n$ akkor és csak akkor oldható meg,
+	ha $(a, n) \mid b$.
+	Ez esetben pontosan $(a, n)$ darab inkongruens megoldás van $\bmod n$.
+\end{theorem}
+\begin{proof}
+	\begin{multline*}
+		a \cdot x \equiv b \mod n \iff
+		n \mid a \cdot x - b \iff \\
+		\exists y \in \mathbb{Z}: y \cdot n = x \cdot a - b \iff
+		\exists y \in \mathbb{Z}: x \cdot a + y \cdot n = b
+	\end{multline*}
+	\begin{multline*}
+		\exists x', y' \in \mathbb{Z}:
+		x' \cdot a + y' \cdot n = (a, n) \iff \\
+		\exists x', y' \in \mathbb{Z}:
+		x' \cdot \frac{b}{(a, n)} \cdot a + y' \cdot \frac{b}{(a, n)} \cdot n =
+		\frac{b}{(a, n)} \cdot (a, n) = b
+	\end{multline*}
+	\begin{equation*}
+		x_k = x + k \cdot \frac{n}{(a, n)} \quad k = 0, 1, \dots, (a, n ) - 1
+		%x \cdot a + y \cdot n = b \iff
+	\end{equation*}
+	\begin{equation*}
+		a \cdot x_k = a \cdot \left( x + k \cdot \frac{n}{(a, n)} \right) =
+		a \cdot x + k \cdot \frac{a}{(a, n)} \cdot n \equiv
+		a \cdot x \equiv b \mod n
+	\end{equation*}
+	\begin{multline*}
+		x_i, x_j: a \cdot x_i \equiv a \cdot x_j \equiv b \mod n \implies
+		a \cdot (x_i - x_j) \equiv 0 \mod n \implies \\
+		x_i - x_j \equiv 0 \mod \frac{n}{(a, n)} \implies
+		x_i \equiv x_j \mod \frac{n}{(a, n)}
+	\end{multline*}
+\end{proof}
