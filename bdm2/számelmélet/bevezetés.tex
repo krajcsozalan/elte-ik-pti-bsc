@@ -135,3 +135,18 @@
 		r_n = x_n \cdot a + y_n \cdot b
 	\end{gather*}
 \end{proof}
+\subsubsection{Bővített euklideszi algoritmus}
+\begin{definition}
+	Legyen $q_i, r_i$ az euklideszi algoritmussal megkapott
+	$i$-edik hányados és maradék és
+	\begin{gather*}
+		x_{-1} = 1 \quad x_0 = 0 \\
+		y_{-1} = 0 \quad y_0 = 1
+	\end{gather*}
+	Ekkor a bővített euklideszi algoritmus $i$-edik ($i \geq 1$) sora
+	\begin{gather*}
+		x_i = x_{i - 2} - q_i \cdot x_{i - 1} \\
+		y_i = y_{i - 2} - q_i \cdot y_{i - 1}
+	\end{gather*}
+\end{definition}
+% TODO: Proof?
