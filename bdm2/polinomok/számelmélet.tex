@@ -40,3 +40,31 @@
 \begin{remark*}
 	A tétel $\mathbb{Z}[x]$-ben és $\mathbb{Z}_8[x]$-ben igaz.
 \end{remark*}
+\subsubsection{Legnagyobb közös osztó}
+\begin{definition}
+	Legyen $f, g \in \mathbb{K}[x]$ polinomok.
+	A $h \in \mathbb{K}[x]$ polinom az $f$ és $g$ legnagyobb közös osztója, ha
+	\begin{itemize}
+		\item $h \mid f$ és $h \mid g$
+		\item minden $k \in \mathbb{K}[x]$ esetén,
+		ha $k \mid f$ és $k \mid g$, akkor $k \mid h$
+		\item $h$ főegyütthatója $1$
+	\end{itemize}
+\end{definition}
+\begin{theorem}
+	Bármely két $f, g$ polinomnak létezik legnagyobb közös osztója,
+	és az meghatározható az euklideszi algoritmussal.
+\end{theorem}
+\begin{proof}
+	\begin{align*}
+		\deg f, \deg g \geq 1 \\
+		f = g \cdot q_1 + r_1 & \quad \deg r_1 < \deg g \\
+		g = r_1 \cdot q_2 + r_2 & \quad \deg r_2 < \deg r_1 \\
+		r_1 = r_2 \cdot q_3 + r_3 & \quad \deg r_3 < \deg r_2 \\
+		\dots \\
+		r_{\ell - 2} = r_{\ell - 1} \cdot q_\ell + r_\ell & \quad \deg r_\ell < \deg r_{\ell - 1} \\
+		r_{\ell - 1} = r_\ell \cdot q_{\ell + 1}
+	\end{align*}
+	Ekkor $(f, g) = \frac{1}{c} \cdot r_\ell$,
+	ahol $c$ az $r_\ell$ polinom főegyütthatója.
+\end{proof}
