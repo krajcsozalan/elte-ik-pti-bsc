@@ -114,3 +114,45 @@
 		x_i \equiv x_j \mod \frac{n}{(a, n)}
 	\end{multline*}
 \end{proof}
+\subsubsection{Euler-féle $\varphi$ függvény}
+\begin{definition}
+	Adott $n > 1$ nemnegatív egész szám esetén legyen
+	\begin{equation*}
+		\varphi(n) = |\{ 1 \leq a < n: (a, n) = 1 \}|
+	\end{equation*}
+	 az Euler-függvény. Legyen továbbá $\varphi(1) = 1$.
+\end{definition}
+\begin{theorem}
+	Legyen $n$ prímtényezős felbontása
+	$n = p_1^{e_1} \cdot p_2^{e_2} \cdot \dots \dots p_\ell^{e_\ell}$. Ekkor
+	\begin{equation*}
+		\varphi(n) =
+		n \cdot \sum_{i = 1}^{\ell} \left( 1 - \frac{1}{p_i} \right)
+	\end{equation*}
+\end{theorem}
+\begin{theorem}
+	Legyen $a, n \in \mathbb{Z}, (a, n) = 1$.
+	Ekkor $a^{\varphi(n)} \equiv 1 \mod n$.
+\end{theorem}
+\begin{proof}
+	\begin{multline*}
+		(a, n) = 1 \implies
+		\forall b: \exists x: a \cdot x \equiv b \mod n \land \\
+		(x_i, x_j: a \cdot x_i \equiv a \cdot x_j \equiv b \mod n \implies
+		x_i = x_j)
+	\end{multline*}
+	\begin{equation*}
+		\{ x: 1 \leq x < n, (n, x) = 1 \} \equiv
+		\{ a \cdot x: 1 \leq x < n, (n, x) = 1 \} \mod n
+	\end{equation*}
+	\begin{equation*}
+		\prod_{\substack{1 \leq x < n \\ (n, x) = 1}} x \equiv
+		\prod_{\substack{1 \leq x < n \\ (n, x) = 1}} a \cdot x \equiv
+		a^{\varphi(n)} \cdot
+		\prod_{\substack{1 \leq x < n \\ (n, x) = 1}} x \mod n
+	\end{equation*}
+	\begin{equation*}
+		\left( n, \prod_{\substack{1 \leq x < n \\ (n, x) = 1}} x \right) =
+		1 \implies a^{\varphi(n)} \equiv 1 \mod n
+	\end{equation*}
+\end{proof}
