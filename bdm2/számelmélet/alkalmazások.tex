@@ -29,3 +29,16 @@
 		m \cdot (m^{\varphi(n)})^k \equiv m \cdot 1^k \equiv m \mod n
 	\end{gather*}
 \end{proof}
+\subsubsection{Gyors hatványozás}
+\begin{theorem}
+	Legyenek $n, a, k$ pozitív egészek, $n > 1$.
+	\begin{gather*}
+		k = \sum_{i = 0}^{\ell} \varepsilon_i \cdot 2^i
+		\quad \varepsilon_i \in \{ 0, 1 \} \\
+		a^k \equiv a^{\sum_{i = 0}^{\ell} \varepsilon_i \cdot 2^i} \equiv
+		\prod_{i = 0}^{\ell} \left( a^{\varepsilon_i} \right)^{2^i} \equiv \\
+		\equiv \left(\dots \left(\left( a^{\ell_i} \bmod n \right)^2 \cdot
+		a^{\ell_{i - 1}} \bmod n \right)^2 \dots \right)^2 \cdot
+		a^{\ell_0} \bmod n
+	\end{gather*}
+\end{theorem}
