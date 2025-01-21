@@ -11,3 +11,21 @@
 		(g^a)^b \equiv (g^b)^a \equiv g^{a \cdot b} \mod p
 	\end{equation*}
 \end{definition}
+\subsubsection{RSA titkosítás}
+\begin{definition}
+	Legyen $p, q$ két prímszám és $n = p \cdot q$.
+	Ekkor $\varphi(n) = (p - 1) \cdot (q - 1)$.
+	Legyen $e \geq 2: (e, \varphi(n)) = 1$.
+	Legyen $d: e \cdot d \equiv 1 \mod \varphi(n)$.
+	Ekkor a titkos kulcs $(p, q, d)$ és a nyilvános kulcs $(n, e)$.
+	Legyen $m: 1 \leq m < n, (m, n) = 1$ egy üzenet.
+	Ekkor a rejtjelezett üzenet $m^e \bmod n$,
+	az eredeti üzenet $(m^e)^d \bmod n$.
+\end{definition}
+\begin{proof}
+	\begin{gather*}
+		(m, n) = 1 \\
+		(m^e)^d \equiv m^{e \cdot d} \equiv m^{1 + k \cdot \varphi(n)} \equiv
+		m \cdot (m^{\varphi(n)})^k \equiv m \cdot 1^k \equiv m \mod n
+	\end{gather*}
+\end{proof}
