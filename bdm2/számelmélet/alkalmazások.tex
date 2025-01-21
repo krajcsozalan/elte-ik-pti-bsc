@@ -1,3 +1,13 @@
 \setcounter{definition}{0}
 \setcounter{theorem}{0}
 \subsection{Kriptográfiai alkalmazások}
+\subsubsection{Diffie-Hellman kulcscsere}
+\begin{definition}
+	Legyen $p$ prímszám, $g$ generátor modulo $p$.
+	Legyenek a titkos kulcsok $a, b \in \mathbb{Z}_{p - 1}$.
+	Legyenek a nyilvános kulcsok $g^a \bmod p, g^b \bmod p$.
+	Ekkor a közös titkos kulcs
+	\begin{equation*}
+		(g^a)^b \equiv (g^b)^a \equiv g^{a \cdot b} \mod p
+	\end{equation*}
+\end{definition}
