@@ -9,3 +9,71 @@
 \begin{remark*}
 	Jelölése: $a \equiv b \mod n$
 \end{remark*}
+\subsubsection{Tulajdonságai}
+\begin{theorem}
+	A kongruencia ekvivalencia reláció.
+\end{theorem}
+\begin{proof}
+	\begin{equation*}
+		n \mid a - a = 0 \implies a \equiv a \mod n \implies \text{reflexív} \\
+	\end{equation*}
+	\begin{multline*}
+		a \equiv b \mod n \land b \equiv c \mod n \implies
+		n \mid a - b \land n \mid b - c \implies \\
+		n \mid (a - b) + (b - c) = a - c \implies
+		a \equiv c \mod n \implies \text{tranzitív}
+	\end{multline*}
+	\begin{multline*}
+		a \equiv b \mod n \implies n \mid a - b \implies
+		n \mid (-1) \cdot (a - b) = b - a \implies \\
+		b \equiv a \mod n \implies \text{szimmetrikus}
+	\end{multline*}
+\end{proof}
+\begin{theorem}
+	Legyenek $a, b, c, d, n \in \mathbb{Z}, n \neq 0$ és
+	$a \equiv b \mod n$ és $c \equiv d \mod n$. Ekkor
+	\begin{itemize}
+		\item $a + c \equiv b + d \mod n$
+		\item $a \cdot c \equiv b \cdot d \mod n$
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	\begin{multline*}
+		a \equiv b \mod n \land c \equiv d \mod n \implies
+		n \mid a - b \land n \mid c - d \implies \\
+		n \mid (a - b) + (c - d) = (a + c) - (b + d) \implies
+		a + c \equiv b + d \mod n
+	\end{multline*}
+	\begin{multline*}
+		a \equiv b \mod n \land c \equiv d \mod n \implies
+		n \mid a - b \land n \mid c - d \implies \\
+		n \mid (a - b) \cdot c + (c - d) \cdot b =
+		a \cdot c - b \cdot d \implies
+		a \cdot c \equiv b \cdot d \mod n
+	\end{multline*}
+\end{proof}
+\begin{theorem}
+	Legyenek $a, b, c, n \in \mathbb{Z}, n \neq 0$. Ekkor
+	\begin{equation*}
+		a \cdot b \equiv a \cdot c \mod n \iff b \equiv c \mod \frac{n}{(a, n)}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\begin{equation*}
+		d = (a, n)
+	\end{equation*}
+	\begin{multline*}
+		a \cdot b \equiv a \cdot c \mod n \implies
+		n \mid a \cdot b - a \cdot c = a \cdot (b - c) \implies \\
+		\frac{n}{d} \cdot d \mid
+		\frac{a}{d} \cdot d \cdot (b - c) \implies
+		\exists k \in \mathbb{Z}: k \cdot \frac{n}{d} \cdot d =
+		\frac{a}{d} \cdot d \cdot (b - c) \implies \\
+		k \cdot \frac{n}{d} = \frac{a}{d} \cdot (b - c) \implies
+		\frac{n}{d} \mid \frac{a}{d} \cdot (b - c)
+	\end{multline*}
+	\begin{equation*}
+		\left(\frac{n}{d}, \frac{a}{d}\right) = 1 \implies
+		\frac{n}{d} \mid (b - c)
+	\end{equation*}
+\end{proof}
