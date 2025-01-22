@@ -68,3 +68,26 @@
 	Ekkor $(f, g) = \frac{1}{c} \cdot r_\ell$,
 	ahol $c$ az $r_\ell$ polinom főegyütthatója.
 \end{proof}
+\subsubsection{Euklideszi algoritmus}
+\begin{definition}
+	Legyen $f, g \in \mathbb{K}[x]$ és $r_{-1} = f, r_0 = g$.
+	Ekkor az euklideszi $i$-edik ($i \geq 1$) sora
+	\begin{equation*}
+		r_{i - 2} = r_{i - 1} \cdot q_i + r_i \quad \deg r_i < \deg r_{i - 1}
+	\end{equation*}
+\end{definition}
+\begin{theorem}
+	Az euklideszi algoritmus véges sok lépésben véget ér és
+	az utolsó nem-nulla maradék a legnagyobb közös osztó.
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		\deg g > \deg r_1 > \deg r_2 > \dots > \deg r_{\ell - 1} > \deg r_\ell \\
+		r_\ell \mid r_{\ell - 1} \implies
+		r_\ell \mid r_{\ell - 1} \cdot q_\ell + r_\ell = r_{\ell - 2} \implies
+		\dots \implies r_\ell \mid g \implies r_\ell \mid f \\
+		h \mid f, g \implies
+		h \mid g \cdot q_1 + r_1 - q_1 \cdot g = r_1 \implies
+		h \mid r_2 \implies \dots \implies h \mid r_\ell
+	\end{gather*}
+\end{proof}
