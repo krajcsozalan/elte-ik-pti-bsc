@@ -91,3 +91,29 @@
 		h \mid r_2 \implies \dots \implies h \mid r_\ell
 	\end{gather*}
 \end{proof}
+\subsubsection{Bővített euklideszi algoritmus}
+\begin{theorem}
+	Minden $f, g$ polinom esetén léteznek $u, v$ polinomok,
+	hogy $(f, g) = u \cdot f + v \cdot g$.
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		r_{i - 2} = r_{i - 1} \cdot q_i + r_i \\
+		u_{-1} = 1, u_0 = 0 \quad i \geq 1 \implies
+		u_i = u_{i - 2} - q_i \cdot u_{i - 1} \\
+		v_{-1} = 0, v_1 = 1 \quad i \geq 1 \implies
+		v_i = v_{i - 2} - q_i \cdot v_{i - 1} \\
+	\end{gather*}
+	\begin{gather*}
+		i = -1 \implies r_{-1} = f = 1 \cdot f + 0 \cdot g \\
+		i = 0 \implies r_0 = g = 0 \cdot f + 1 \cdot g \\
+		i \geq 1 \implies r_{i - 2} = r_{i - 1} \cdot q_i + r_i \implies
+		r_i = r_{i - 2} - r_{i - 1} \cdot q_i \\
+		r_i = \left( u_{i - 2} \cdot f + v_{i - 2} \cdot g \right) -
+		\left( u_{i - 1} \cdot f + v_{i - 1} \cdot g \right) \cdot q_i \\
+		r_i = \left( u_{i - 2} - q_i \cdot u_{i - 1} \right) \cdot f +
+		\left( v_{i - 2} - q_i \cdot v_{i - 1} \right) \cdot g \\
+		r_i = u_i \cdot f + v_i \cdot g \\
+		r_\ell = u_\ell \cdot f + v_\ell \cdot g
+	\end{gather*}
+\end{proof}
