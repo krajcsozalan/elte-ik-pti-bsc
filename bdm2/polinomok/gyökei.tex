@@ -87,3 +87,18 @@
 		c_i \cdot x_i \cdot (d_j \cdot x^j)
 	\end{multline*}
 \end{proof}
+\subsubsection{Formális derivált és többszörös gyökök}
+\begin{theorem}
+	Egy adott $f$ polinomnak az $x_0$ érték többszörös gyöke,
+	ha mind $f$-nek, mind $f'$-nak gyöke.
+	Speciálisan $f$ többszörös gyökei az $(f, f')$ gyökei.
+\end{theorem}
+\begin{proof}
+	\begin{multline*}
+		f = (x - x_0)^2 \cdot g \implies
+		f' = \left( (x - x_0)^2 \cdot g \right)' = \\
+		\left( (x - x_0)^2 \right)' \cdot g + (x - x_0)^2 \cdot g' =
+		2 \cdot (x - x_0) \cdot g + (x - x_0)^2 \cdot g' = \\
+		(x - x_0) \cdot (2 \cdot g + (x - x_0) \cdot g')
+	\end{multline*}
+\end{proof}
