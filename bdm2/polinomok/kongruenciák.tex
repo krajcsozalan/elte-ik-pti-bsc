@@ -10,3 +10,31 @@
 		h \mid f - g \implies f \equiv g \mod h
 	\end{equation*}
 \end{definition}
+\subsubsection{Tulajdonságai}
+\begin{theorem}
+	A kongruencia ekvivalencia reláció.
+\end{theorem}
+\begin{proof}
+	\begin{equation*}
+		h \mid f - f = 0 \implies f \equiv f \mod h \implies \text{reflexív}
+	\end{equation*}
+	\begin{multline*}
+		f \equiv g \mod h \land g \equiv k \mod h \implies
+		h \mid f - g \land h \mid g - k \implies \\
+		h \mid (f - g) + (g - k) = f - k \implies
+		f \equiv k \mod h \implies \text{tranzitív}
+	\end{multline*}
+	\begin{multline*}
+		f \equiv g \mod h \implies h \mid f - g \implies
+		h \mid (-1 ) \cdot (f - g) = g - f \implies \\
+		g \equiv f \mod h \implies \text{szimmetrikus}
+	\end{multline*}
+\end{proof}
+\begin{theorem}
+	Legyen $f, g, h, k, l \in \mathbb{K}[x], h \neq 0$ és
+	$f \equiv g \mod h$ és $k \equiv l \mod h$. Ekkor
+	\begin{itemize}
+		\item $f + k \equiv g + l \mod h$
+		\item $f \cdot k \equiv g \cdot l \mod h$
+	\end{itemize}
+\end{theorem}
