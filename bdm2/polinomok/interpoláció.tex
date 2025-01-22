@@ -39,3 +39,13 @@
 		\tag{Ellentmondás, mert ha $F$-nek $x_0$ gyöke, akkor $n + 1$ gyöke van}
 	\end{multline*}
 \end{proof}
+\subsubsection{Titokmegosztás}
+\begin{definition}
+	Legyen $p > n$ egy prím és $s \in \mathbb{Z}_p$ a titok.
+	Legyen $f \in \mathbb{Z}_p[x]$, hogy $\deg f = k - 1$ és $f(0) = s$.
+	Minden $i$-edik ($i = 0, \dots, n$) résztvevő kapja meg
+	az $(i, f(i))$ párost.
+	Ekkor ha $k$ résztvevő kiszámolja a Lagrange interpolációs polinomot
+	a saját pontjaikon keresztül, akkor az egyértelműség miatt ez $f$ lesz
+	és $f(0) = s$.
+\end{definition}
