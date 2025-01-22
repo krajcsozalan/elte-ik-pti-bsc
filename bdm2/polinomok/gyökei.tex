@@ -9,3 +9,32 @@
 		x_0 \overset{f}{\mapsto} f(x_0) = 0
 	\end{equation*}
 \end{definition}
+\subsubsection{Fokok és gyökszám}
+\begin{theorem}
+	Legyen $\mathbb{K} = \{ \mathbb{C, R, Q, Z}_p \}$.
+	Egy $f \in \mathbb{K}[x]$ polinomnak legfeljebb $\deg f$ gyöke lehet.
+\end{theorem}
+\begin{remark*}
+	A tétel $\mathbb{Z}_8[x]$ nem igaz.
+\end{remark*}
+\begin{proof}
+	\begin{gather*}
+		\deg f = 0 \implies f = c_0, c_0 \neq 0 \implies
+		f\text{-nek nincs gyöke} \\
+		\deg f \geq 1 \land f\text{-nek nincs gyöke} \implies
+		f\text{-nek nincs gyöke} \\
+		\deg f \geq 1 \land f(x_0) = 0 \implies
+		\exists q, r \in \mathbb{K}[x]: f = (x - x_0) \cdot q + r \quad
+		\deg r < 1
+	\end{gather*}
+	\begin{multline*}
+		f(x_0) = 0 = q(x_0) \cdot (x_0 - x_0) + r \implies r = 0 \implies \\
+		f = (x - x_0) \cdot q \implies \deg q = \deg f - 1
+	\end{multline*}
+	\begin{equation*}
+		\exists x_1: x_1 \neq x_0 \land f(x_1) = 0 \implies
+		f(x_1) = (x_1 - x_0) \cdot q(x_1) \implies q(x_1) = 0
+	\end{equation*}
+	Mivel $q$-nak legfeljebb $n - 1$ gyöke lehet,
+	így $f$-nek legfeljebb $n$ gyöke lehet.
+\end{proof}
