@@ -52,3 +52,38 @@
 	Egy $f$ polinomnak az $x_0$ érték többszörös gyöke,
 	ha legalább kétszeres gyöke.
 \end{definition}
+\subsubsection{Formális derivált}
+\begin{definition}
+	Polinomokra definiáljuk az $f'$ formális deriváltat a következő módon
+	\begin{itemize}
+		\item $(x^n)' = n \cdot x^{n - 1}$
+		\item $(c \cdot f)' = c \cdot f'$
+		\item $(f + g)' = f' + g'$
+	\end{itemize}
+\end{definition}
+\begin{theorem}
+	A formális derivált teljesíti a szorzat szabályt.
+	\begin{equation*}
+		(f \cdot g)' = f' \cdot g + f \cdot g'
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\begin{equation*}
+		f = c_n \cdot x^n + \dots c_0 \quad
+		g = d_m \cdot x^m + \dots d_0 \\
+	\end{equation*}
+	\begin{multline*}
+		(f \cdot g)' = \left( (c_n \cdot x^n + \dots + c_0) \cdot
+		(d_m \cdot x^m + \dots + d_0) \right)' = \\
+		\left( \sum_{i, j} (c_i \cdot d_j \cdot x^{i + j}) \right)' =
+		\sum_{i, j} \left( c_i \cdot d_j \cdot x^{i + j} \right)'
+	\end{multline*}
+	\begin{multline*}
+		(c_i \cdot d_j \cdot x^{i + j}) =
+		(i + j) \cdot c_i \cdot d_j \cdot x^{i + j - 1} =
+		i \cdot c_i \cdot x^{i - 1} \cdot d_j \cdot x^j +
+		c_i \cdot x^i \cdot j \cdot d_j \cdot x^{j - 1} = \\
+		(c_i \cdot x^i)' \cdot d_j \cdot x^j +
+		c_i \cdot x_i \cdot (d_j \cdot x^j)
+	\end{multline*}
+\end{proof}
