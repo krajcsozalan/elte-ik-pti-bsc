@@ -9,3 +9,33 @@
 		L_i = \prod_{\substack{j = 0 \\ i \neq j}}^n \frac{x - x_j}{x_i - x_j}
 	\end{equation*}
 \end{definition}
+\subsubsection{Lagrange interpoláció}
+\begin{theorem}
+	Ha $L_i$ az $i$-edik Lagrange alappolinom (és $L_i(x_i) = 1$), akkor
+	\begin{equation*}
+		f = \sum_{i = 0}^n y_i \cdot L_i
+	\end{equation*}
+	polinomra teljesül, hogy $f(x_0) = y_0, \dots, f(x_n) = y_n$.
+\end{theorem}
+\begin{theorem}
+	Legyenek $x_0, \dots x_n$ páronként különböző alappontok és
+	$y_0, \dots, y_n$ tetszőleges értékek.
+	Ekkor egyértelműen létezik olyan $f$ polinom,
+	hogy $\deg f \leq n$ és $f(x_i) = y_i$.
+\end{theorem}
+\begin{proof}
+	\begin{gather*}
+		\forall i = 0, \dots, n: L_i(x_i) = 1, y_i \cdot L_i(x_i) = y_i \\
+		\forall i = 0, \dots, n: \forall j = 0, \dots, n: i \neq j \implies
+		L_i(x_j) = 0 \\
+		\forall i = 0, \dots, n: \sum_{i = 0}^n y_i \cdot L_i(x_i) = y_i \\
+		\deg L_i = n \implies \deg f =
+		\deg \sum_{i = 0}^n y_i \cdot L_i(x_i) \leq n
+	\end{gather*}
+	\begin{multline*}
+		\forall i = 0, \dots, n: f(x_i) = g(x_i) = y_i \land
+		\deg f, \deg g \leq n \implies \\
+		F = f - g \implies \deg F \leq n \land F(x_0) = 0
+		\tag{Ellentmondás, mert ha $F$-nek $x_0$ gyöke, akkor $n + 1$ gyöke van}
+	\end{multline*}
+\end{proof}
