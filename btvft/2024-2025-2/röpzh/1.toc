@@ -1,3 +1,0 @@
-\select@language {hungarian} \contentsline {section}{\numberline {1}Normált tér fogalma}{1}{}%
-\select@language {hungarian} \contentsline {section}{\numberline {2}Példák normákra az $\mathbb {R}^n$ lineáris téren}{1}{}%
-\select@language {hungarian} \contentsline {section}{\numberline {3}Környezet fogalma az $\mathbb {R}^n$ euklideszi térben}{1}{}%
