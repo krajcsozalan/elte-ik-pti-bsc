@@ -1,0 +1,1 @@
+# Többváltozós függvénytan (B szakirány)
